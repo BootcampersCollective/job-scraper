@@ -11,8 +11,8 @@ export default () => (
     <Switch>
       <Route exact path="/" exact component={ Test } />
       <Route exact path="/front-end" exact component={ Sample } />
-      <Route exact path="/front-end" exact component={ Sample } />
-      <Route exact path="/front-end" exact component={ Sample } />
+      <Route exact path="/back-end" exact component={ Sample } />
+      <Route exact path="/qa" exact component={ Sample } />
     </Switch>
   </Router>
 )
