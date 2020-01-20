@@ -7,7 +7,7 @@ return source.map(entry=><ListGroup.Item>{entry}</ListGroup.Item>)
 
 const JobShowSummary = ({ styling, title, data }) => (
   <Card body className={ styling }>
-      <Card.Subtitle>{title}</Card.Subtitle>
+      <Card.Title>{title}</Card.Title>
       <ListGroup>
       {Entries(data)}
       </ListGroup>

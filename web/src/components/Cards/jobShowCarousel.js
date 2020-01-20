@@ -18,8 +18,8 @@ const items = (source) => {
 }
 
 const JobCardCarousel = ({images}) => (
-    
-    <Carousel   controls={false}
+    <Card>
+        <Carousel   controls={false}
                 fade={true} 
                 interval={5000} 
                 indicators={false} 
@@ -28,7 +28,9 @@ const JobCardCarousel = ({images}) => (
 
         {items(images)}
 
-    </Carousel>
+        </Carousel>
+    </Card>
+    
 )
 
 export default JobCardCarousel
