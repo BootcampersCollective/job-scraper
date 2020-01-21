@@ -2,14 +2,15 @@ import React from 'react';
 import logo from './logo.png';
 import './styles/App.css';
 import Routes from './Routes'
-import {Container, Row, Navbar, Nav, Form, FormControl, Button} from 'react-bootstrap';
+import {Container, Row, Nav, Form, FormControl, Button} from 'react-bootstrap';
+import Navbar from './screens/Navbar'
 // import style from 'styled-components'
 
 function App() {
   return (
     <div className="App">
-      
       <>
+      
         <Container> 
           <Navbar bg="light" variant="light">
             <Nav.Link href="#home">
