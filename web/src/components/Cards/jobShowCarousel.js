@@ -18,16 +18,16 @@ const items = (imgArr) => {
     })   
 }
 
-const JobCardCarousel = ({imgArr}) => (
+const JobCardCarousel = ({images}) => (
     <Card>
         <Carousel   controls={false}
                     fade={true} 
-                    interval={5000} 
+                    interval={2000} 
                     indicators={false} 
                     pauseOnHover={true}
                 >
         
-        {items(imgArr)}
+        {items(images)}
 
         </Carousel>
     </Card>

@@ -9,7 +9,9 @@ const JobShowSummary = ({ styling, title, data }) => (
   <Card body className={ styling }>
       <Card.Title>{title}</Card.Title>
       <ListGroup>
-      {Entries(data)}
+      {Entries(data.topSkills)}
+      <br/>
+      {Entries(data.prefSkills)}
       </ListGroup>
   </Card>
 )

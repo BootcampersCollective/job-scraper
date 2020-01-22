@@ -8,7 +8,6 @@ import {Container, Row, Navbar, Nav, Form, FormControl, Button} from 'react-boot
 function App() {
   return (
     <div className="App">
-      
       <>
         <Container> 
           <Navbar bg="light" variant="light">
