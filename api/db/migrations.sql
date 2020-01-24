@@ -1,30 +1,37 @@
+--this is a rough initial draft for what the database structure could look like. Obviously, our MVP would be simpler and I don't know exactly what the python_scraper team be able to gather in terms of data for the listings. I put a link to the dbdiabram.io model in the Slack channel. feel free to copy and edit it with any changes or suggestions you have; I wasn't at last Saturday's meetup so if you discussed anything regarding the db dtructure it hasn't been reflected in this commit ("db structure").
+DROP DATABASE IF EXISTS "job-scraper";
+CREATE DATABASE "job-scraper";
+  
+\cc "job-scraper";
+
 CREATE TABLE "Seekers" (
   "id" SERIAL PRIMARY KEY,
-  "username" varchar UNIQUE NOT NULL,
-  "email" varchar UNIQUE NOT NULL,
-  "full_name" varchar NOT NULL,
-  "current_job_title" varchar,
-  "location" varchar NOT NULL,
+  "username" VARCHAR NOT NULL,
+  "email" VARCHAR NOT NULL,
+  "full_name" VARCHAR NOT NULL,
+  "current_job_title" VARCHAR,
+  "location" VARCHAR NOT NULL,
   "salary_range" integer,
-  "job_type" checkbox,
+  "job_type" VARCHAR,
   "years_experience" integer,
-  "skillset" varchar NOT NULL
+  "skillset" VARCHAR NOT NULL
 );
 
 CREATE TABLE "Corporations" (
   "id" SERIAL PRIMARY KEY,
-  "location" varchar NOT NULL
+  "location" VARCHAR NOT NULL,
+
 );
 
 CREATE TABLE "Listings" (
   "id" SERIAL PRIMARY KEY,
-  "company_name" varchar UNIQUE NOT NULL,
-  "industry" dropdown,
-  "job_title" varchar NOT NULL,
-  "qualifications" varchar NOT NULL,
+  "company_name" VARCHAR NOT NULL,
+  "industry" VARCHAR,
+  "job_title" VARCHAR NOT NULL,
+  "qualifications" VARCHAR NOT NULL,
   "posted_at" datetime DEFAULT (now()),
-  "location" varchar,
-  "status" varchar
+  "location" VARCHAR,
+  "status" BOOLEAN
 );
 
 ALTER TABLE "Listings" ADD FOREIGN KEY ("id") REFERENCES "Corporations" ("id");
