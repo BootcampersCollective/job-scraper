@@ -11,8 +11,8 @@ function App() {
       <>
         <Container> 
           <Navbar bg="light" variant="light">
-            <Nav.Link href="#home">
-            <Navbar.Brand href="#home">
+            <Nav.Link href="/">
+            <Navbar.Brand href="/">
               <img
                 alt="JobScraper Logo"
                 src={logo}
@@ -24,10 +24,10 @@ function App() {
             </Navbar.Brand>
             </Nav.Link>
             <Nav className="mr-auto">
-              <Nav.Link href="/front-end">Front End</Nav.Link>
-              <Nav.Link href="/back-end">Back End</Nav.Link>
-              <Nav.Link href="/dev-ops">Dev-Ops</Nav.Link>
-              <Nav.Link href="/qa">QA</Nav.Link>
+              <Nav.Link href="/jobs/front-end">Front End</Nav.Link>
+              <Nav.Link href="/jobs/back-end">Back End</Nav.Link>
+              <Nav.Link href="/jobs/dev-ops">Dev-Ops</Nav.Link>
+              <Nav.Link href="/jobs/qa">QA</Nav.Link>
             </Nav>
             {/* <Form inline>
               <FormControl type="text" placeholder="Search" className="mr-md-2" />

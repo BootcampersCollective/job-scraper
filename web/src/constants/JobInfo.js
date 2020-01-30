@@ -28,7 +28,8 @@ const JobInfo = {
         header : "card-subtitle center my-2 md-6",
         graphics: "",
         summary: "card-title center md-6 my-3"
-    }
+    },
+    experience : "Senior"
 }
 
 export default JobInfo

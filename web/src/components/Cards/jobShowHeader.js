@@ -1,9 +1,9 @@
 import React from 'react'
 import  Card  from 'react-bootstrap/Card'
 
-const JobCardHeader = ({ category, role, styling }) => (
+const JobCardHeader = ({ category, role, styling, exp,}) => (
   <Card body className={ styling }>
-    { category }  >   { role }  
+    { category }  >   { role }  > { exp  || "Experience"}
   </Card>
 )
 

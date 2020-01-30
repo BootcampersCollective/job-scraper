@@ -1,2 +1,4 @@
 import JobInfo from './JobInfo'
-export {JobInfo}
+import JobIndexInfo from './JobIndex'
+
+export {JobInfo, JobIndexInfo}

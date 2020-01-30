@@ -1,10 +1,9 @@
-import jobShowCarousel from './jobShowCarousel'
-import jobShowHeader from './jobShowHeader'
-import jobShowSummary from './jobShowSummary'
-
+import JobShowCarousel from './jobShowCarousel'
+import JobShowHeader from './jobShowHeader'
+import JobShowSummary from './jobShowSummary'
 
 export {
-  jobShowCarousel,
-  jobShowHeader,
-  jobShowSummary
+  JobShowCarousel,
+  JobShowHeader,
+  JobShowSummary,
 }
