@@ -1,18 +1,15 @@
 import React from 'react'
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom'
-import Test from './screens/test'
+import JobIndex from './screens/JobIndex.js'
+import RoleShow from './screens/RoleShow.js'
 
-const Sample = ()=>{
-  return <h1>Sample Functional Component</h1>
-}
+const Sample = () => (<h1>Sample Functional Component</h1>)
 
 export default () => (
   <Router>
     <Switch>
-      <Route exact path="/" exact component={ Test } />
-      <Route exact path="/front-end" exact component={ Sample } />
-      <Route exact path="/back-end" exact component={ Sample } />
-      <Route exact path="/qa" exact component={ Sample } />
+      <Route exact path="/" component={ JobIndex } />
+      <Route exact path="/jobs/:category" component={ RoleShow } />
     </Switch>
   </Router>
 )
