@@ -1,0 +1,28 @@
+description: Updated person data using _delete_at_path operator
+url: /v1/graphql
+status: 200
+response:
+  data:
+    update_person:
+      affected_rows: 1
+      returning:
+      - id: 1
+        details:
+          name:
+            first: John
+query:
+  query: |
+    mutation update_person($value: jsonb) {
+      update_person(
+        where: {id: {_eq: 1}},
+        _delete_at_path: {
+          details: ["name", "last"]
+        }
+      ){
+        affected_rows
+        returning{
+          id
+          details
+        }
+      }
+    }
