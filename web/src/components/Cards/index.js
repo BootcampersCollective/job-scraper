@@ -5,5 +5,5 @@ import JobShowSummary from './jobShowSummary'
 export {
   JobShowCarousel,
   JobShowHeader,
-  JobShowSummary,
+  JobShowSummary
 }
