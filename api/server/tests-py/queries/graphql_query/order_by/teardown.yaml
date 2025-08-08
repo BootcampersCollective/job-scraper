@@ -1,0 +1,13 @@
+type: bulk
+args:
+- type: run_sql
+  args:
+    sql: |
+      DROP TABLE article;
+      DROP TABLE author;
+      DROP TABLE contact;
+      DROP TABLE "Track";
+      DROP TABLE "Tag";
+      DROP TABLE "Album";
+      DROP TABLE employee;
+    cascade: true

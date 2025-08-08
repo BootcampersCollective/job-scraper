@@ -1,0 +1,22 @@
+description: Nested select on article with limit expecting error
+url: /v1/graphql
+status: 200
+response:
+  errors:
+  - extensions:
+      code: not-supported
+      path: $.selectionSet.article.args.limit
+    message: unexpected negative value
+query:
+  query: |
+    query {
+      article(limit: -1, offset: 1) {
+        id
+        title
+        content
+        author {
+          id
+          name
+        }
+      }
+    }

@@ -1,0 +1,22 @@
+description: Nested select on article with limit expecting error
+url: /v1/graphql
+status: 200
+response:
+  errors:
+  - extensions:
+      code: validation-failed
+      path: $.selectionSet.article.args.limit
+    message: expecting Integer value for "limit"
+query:
+  query: |
+    query {
+      article(limit: "3", offset: 1) {
+        id
+        title
+        content
+        author {
+          id
+          name
+        }
+      }
+    }

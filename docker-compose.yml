@@ -1,0 +1,13 @@
+version: "3.7"
+
+services: 
+
+    pgdb: 
+        image: postgres:12.1-alpine 
+        restart: always
+        volumes: 
+            - pgdb-data:/var/lib/postgresql/data
+        ports: 
+            - '5432:8080'
+volumes: 
+    pgdb-data: {}

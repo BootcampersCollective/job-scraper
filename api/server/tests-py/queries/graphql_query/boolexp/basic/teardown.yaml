@@ -1,0 +1,15 @@
+type: bulk
+args:
+- type: run_sql
+  args:
+    sql: |
+      DROP TABLE table_with_sql_identifier;
+      DROP TABLE article;
+      DROP TABLE author;
+      DROP TABLE city;
+      DROP TABLE orders;
+      DROP TABLE message;
+      DROP TABLE uuid_test;
+      DROP TABLE "user";
+      DROP TABLE account;
+    cascade: true

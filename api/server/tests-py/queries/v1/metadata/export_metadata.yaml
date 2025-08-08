@@ -1,0 +1,40 @@
+description: Export schema cache (metadata)
+url: /v1/query
+status: 200
+response:
+  version: 2
+  tables:
+  - table:
+      schema: public
+      name: article
+    object_relationships:
+    - name: author
+      using:
+        foreign_key_constraint_on: author_id
+  - table:
+      schema: public
+      name: author
+    array_relationships:
+    - name: articles
+      using:
+        foreign_key_constraint_on:
+          column: author_id
+          table:
+            schema: public
+            name: article
+      comment: List all articles of the author
+    computed_fields:
+    - name: get_articles
+      definition:
+        function:
+          schema: public
+          name: fetch_articles
+        table_argument: author_row
+  functions:
+  - function:
+      schema: public
+      name: search_articles
+
+query:
+  type: export_metadata
+  args: {}

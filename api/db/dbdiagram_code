@@ -1,0 +1,104 @@
+
+<iframe width="560" height="315" src='https://dbdiagram.io/embed/5e235c0e9e76504e0ef06851'> </iframe> 
+
+
+Table Seekers {
+    id int [pk, increment] // auto-increment
+    username varchar [not null, unique]
+    email varchar [not null, unique]
+    full_name varchar[not null]
+    current_job_title varchar 
+    location varchar [not null, note: "zipcode-based, or City & State"]
+    salary_range integer [note:"numeric-slider"]
+    job_type checkbox [note: "entry-level, temp., temp-to-hire, part-time, full-time"]
+    years_experience integer
+    skillset varchar [not null, note: "can break into categories, or just keywords"]
+  }
+
+
+
+Table Corporations {
+  id int [pk, increment] //auto-increment
+  location varchar [not null, note: "zipcode-based, or City & State"]
+}
+
+Ref: Corporations.id < Listings.id
+Ref: Listings.id < Seekers.id
+
+
+//--------------------//
+
+//// -- LEVEL 2
+//// -- Adding column settings
+
+Table Listings {
+  id int [pk, increment] // auto-increment
+  company_name varchar[not null, unique]
+  industry dropdown [note: "Accounting,
+
+Administration & Office Support,
+
+Advertising, Arts & Media,
+
+Banking & Financial Services,
+
+Call Centre & Customer Service,
+
+Community Services & Development,
+
+Construction,
+
+Consulting & Strategy,
+
+Design & Architechture,
+
+Education & Training,
+
+Engineering,
+
+Farming, Animals & Conservation,
+
+Government & Defence,
+
+Healthcare & Medical,
+
+Hospitality & Tourism,
+
+Human Resources & Recruitment,
+
+Information & Communication Technology,
+
+Insurance & Superannuation,
+
+Legal,
+
+Manufacturing, Transport & Logistics,
+
+Marketing & Communications,
+
+Mining, Resources & Energy,
+
+Real Estate & Property,
+
+Retail & Consumer Products,
+
+Sales,
+
+Science & Technology,
+
+Sport & Recreation,
+
+Trades & Services"]
+  job_title varchar [not null]
+  qualifications varchar [not null, note: "keywords"]
+  posted_at datetime [default: `now()`]
+  location varchar
+  status varchar
+}
+
+//----------------------------------------------//
+
+//// -- Level 3 
+//// -- Enum, Indexes
+
+    

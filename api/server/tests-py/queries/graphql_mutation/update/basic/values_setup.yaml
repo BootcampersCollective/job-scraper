@@ -1,0 +1,28 @@
+type: bulk
+args:
+
+#Insert Author table data
+- type: insert
+  args:
+    table: author
+    objects:
+      - name: Author 1
+        info:
+          age: 23
+        location:
+          type: Point
+          coordinates:
+          - -118.4079
+          - 33.9434
+      - name: Author 2
+
+#Insert Person table data
+- type: insert
+  args:
+    table: person
+    objects:
+    - details:
+        name:
+          first: foo
+          last: bar
+        address: foobar
